@@ -1,0 +1,39 @@
+title: Vue 技术栈
+list:
+  - title: Vue2
+    url: https://cn.vuejs.org/index.html
+  - title: Vue3
+    url: https://v3.cn.vuejs.org/
+
+  - title: Vue CLI
+    url: "https://cli.vuejs.org/zh/guide/"
+
+  - title: vue loader
+    url: https://vue-loader.vuejs.org/
+
+  - title: vue i18n
+    url: https://vue-i18n.intlify.dev/
+
+  - title: vue router
+    url: https://router.vuejs.org/
+
+  - title: nuxtjs
+    url: https://nuxtjs.org/
+
+
+  - title: elementUI
+    url: https://element.eleme.cn/#/zh-CN/component/installation
+
+
+
+  - title: vitejs
+    url: https://cn.vitejs.dev/
+  - title: jquery
+    url: https://www.jquery123.com/
+
+  - title: awesome-vite
+    url: https://github.com/vitejs/awesome-vite
+
+  - title: iviewui
+    url: https://iviewui.com/docs/introduce
+

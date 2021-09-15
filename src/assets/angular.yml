@@ -1,0 +1,10 @@
+title: angular技术栈
+list:
+  - title: rxjs中文文档
+    url: https://cn.rx.js.org/
+  - title: rxjs
+    url: https://rxjs.dev/guide/overview
+  - title: angular
+    url: https://angular.io/
+
+

@@ -1,0 +1,19 @@
+{
+  "root": true,
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "globals": {
+    "chrome": true,
+    "require": true
+  },
+  "extends": ["plugin:vue/vue3-recommended", "airbnb-base", "prettier", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2020,
+    "parser": "babel-eslint"
+  }
+}
