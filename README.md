@@ -3,7 +3,7 @@
 **_Direcoty structure_**
 
 ```
-├── assets/
+├── assets/                           # 这里放 *.yml 文件
 ├── background/                       # background scripts
 │   └── background.js
 ├── content/                          # content scripts
@@ -20,3 +20,5 @@
 # web.devdocs.chrome.welcome
 Chrome 新标签页插件，前端开发专用
 
+
+![](2021-09-16-07-07-14.png)
