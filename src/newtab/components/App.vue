@@ -81,7 +81,7 @@ export default {
       if (!this.searchText) {
         return false
       }
-      return new RegExp(this.searchText, 'i').test(title)
+      return new RegExp(toRaw(this.searchText), 'i').test(title)
     },
   },
 }
@@ -89,6 +89,11 @@ export default {
 <style>
 li a {
   font-size: 16px;
+  color: #60a5fa;
+}
+li a:visited {
+  font-size: 16px;
+  color: #2563eb;
 }
 .flex {
   display: flex;
@@ -108,10 +113,18 @@ li a {
   height: 40px;
   font-size: 18px;
   border-radius: 20px;
-  padding-left: 20px;
-  border: 2px solid 2px solid #39efb4;
+  padding: 0 20px;
+  border: 2px solid #39efb4;
+  outline: 0;
 }
-
+.search-box input:focus {
+  box-shadow: #39efb5b0 2px 2px 10px;
+}
+h3 {
+  opacity: 0.6;
+  font-size: 18px;
+  color: #248667;
+}
 ul {
   padding-left: 0;
 }

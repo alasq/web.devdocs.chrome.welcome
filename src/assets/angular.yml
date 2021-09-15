@@ -1,10 +1,14 @@
-title: angular技术栈
+title: Angular技术栈
 list:
   - title: rxjs中文文档
     url: https://cn.rx.js.org/
+    icon: https://rxjs.dev/assets/images/favicons/favicon.ico
   - title: rxjs
     url: https://rxjs.dev/guide/overview
+    icon: https://rxjs.dev/assets/images/favicons/favicon.ico
+
   - title: angular
     url: https://angular.io/
+    icon: https://angular.io/assets/images/logos/angular/angular.svg
 
 

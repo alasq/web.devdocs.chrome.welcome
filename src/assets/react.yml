@@ -1,10 +1,11 @@
-title: react技术栈
+title: React技术栈
 list:
-  - title: react
+  - title: React
     url: https://react.docschina.org/
   - title: react native
     url: https://reactnative.cn/
   - title: jsx
     url: https://react.docschina.org/docs/introducing-jsx.html
+
 
 

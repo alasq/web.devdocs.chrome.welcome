@@ -2,6 +2,7 @@ title: 打包构建
 list:
   - title: babeljs
     url: https://www.babeljs.cn/
+    icon: https://www.babeljs.cn/img/babel.png
 
   - title: webpack
     url: https://webpack.docschina.org/
@@ -13,5 +14,8 @@ list:
   - title: eslint
     url: https://eslint.bootcss.com/
     icon: https://eslint.bootcss.com/img/logo.png
+
+  - title: yeoman
+    url: https://yeoman.io/
 
 

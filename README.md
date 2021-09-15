@@ -17,4 +17,6 @@
     │   └── App.vue
     └── option.js
 ```
-web.devdocs.chrome.welcome
+# web.devdocs.chrome.welcome
+Chrome 新标签页插件，前端开发专用
+

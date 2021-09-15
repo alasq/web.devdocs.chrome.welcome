@@ -5,21 +5,26 @@ list:
 
   - title: d3js
     url: https://d3js.org/
+    icon: http://www.alloyteam.com/nav/static/images/d3-favicon.png
 
   - title: 蚂蚁金服antv
     url: https://antv.gitee.io/zh
+    icon: https://gw.alipayobjects.com/zos/antfincdn/FLrTNDvlna/antv.png
 
   - title: 3D threejs
     url: https://threejs.org/
 
   - title: GIS openlayers
     url: https://openlayers.org/
+    icon: https://openlayers.org/assets/theme/img/logo70.png
 
   - title: GIS Leaflet
     url: https://leafletjs.com/
+    icon: https://leafletjs.com/docs/images/favicon.ico
 
   - title: tableau
-    url: hhttps://www.tableau.com/zh-cn
+    url: https://www.tableau.com/zh-cn
+    icon: https://cdns.tblsft.com/sites/all/themes/tabwow/logo.png
 
   - title: chartjs
     url: http://chartjs.cn/

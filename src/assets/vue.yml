@@ -11,6 +11,9 @@ list:
   - title: vue loader
     url: https://vue-loader.vuejs.org/
 
+  - title: vue devtools
+    url: https://devtools.vuejs.org/guide/installation.html
+
   - title: vue i18n
     url: https://vue-i18n.intlify.dev/
 
@@ -28,8 +31,7 @@ list:
 
   - title: vitejs
     url: https://cn.vitejs.dev/
-  - title: jquery
-    url: https://www.jquery123.com/
+
 
   - title: awesome-vite
     url: https://github.com/vitejs/awesome-vite
