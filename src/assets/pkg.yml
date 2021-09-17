@@ -1,5 +1,9 @@
 title: 打包构建
 list:
+  - title: npmjs
+    url: https://www.npmjs.com/
+    icon: https://static.npmjs.com/338e4905a2684ca96e08c7780fc68412.png
+
   - title: babeljs
     url: https://www.babeljs.cn/
     icon: https://www.babeljs.cn/img/babel.png
@@ -7,6 +11,7 @@ list:
   - title: webpack
     url: https://webpack.docschina.org/
     icon: http://webpack.html.cn/assets/webpack.svg
+
   - title: rollupjs
     url: https://www.rollupjs.com/
     icon: https://www.rollupjs.com/img/favicon.png
@@ -17,5 +22,27 @@ list:
 
   - title: yeoman
     url: https://yeoman.io/
+
+  - title: gulpjs
+    url: https://www.gulpjs.com.cn/
+
+  - title: gruntjs
+    url: https://www.gruntjs.net/
+
+  - title: yarn
+    url: https://yarn.bootcss.com/
+
+  - title: git
+    url: https://git-scm.com/book/zh/v2
+
+  - title: markdown
+    url: https://www.runoob.com/markdown/md-tutorial.html
+
+  - title: markdown mermind
+    url: https://github.com/mermaid-js/mermaid
+
+  - title: typescript
+    url: https://www.tslang.cn/docs/home.html
+    icon: https://www.tslang.cn/assets/images/icons/favicon-32x32.png
 
 

@@ -1,5 +1,11 @@
 title: Javascript
 list:
+  - title: MDN Web API
+    url: https://developer.mozilla.org/zh-CN/docs/Web/API
+
+  - title: 正则表达式
+    url: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions
+
   - title: lodashjs
     url: https://www.lodashjs.com/
 
@@ -8,5 +14,19 @@ list:
 
   - title: chrome扩展开发中文教程
     url: http://chrome.cenchy.com/
+
+  - title: chrome extensions API （墙）
+    url: https://developer.chrome.com/docs/extensions/reference/
+
+  - title: chrome devtools  （墙）
+    url: https://developer.chrome.com/docs/devtools/overview/
+
   - title: jquery
     url: https://www.jquery123.com/
+
+  - title: Node.js v16.9.1 文档
+    url: http://nodejs.cn/api/
+    icon: http://static.nodejs.cn/_static/img/favicon.png
+
+  - title: ES6 入门教程
+    url: https://es6.ruanyifeng.com/
