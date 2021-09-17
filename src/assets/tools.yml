@@ -1,0 +1,13 @@
+title: 下载
+list:
+  - title: 华为镜像仓
+    url: https://mirrors.huaweicloud.com/
+
+  - title: 淘宝镜像仓
+    url: https://npm.taobao.org/mirrors/
+
+  - title: 清华镜像仓
+    url: https://mirrors.tuna.tsinghua.edu.cn/
+
+  - title: 小工具
+    url: https://gitee.com/alasq/tools
