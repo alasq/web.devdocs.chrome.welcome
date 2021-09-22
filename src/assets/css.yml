@@ -2,19 +2,19 @@ title: CSS
 list:
   - title: sass
     url: https://sass.bootcss.com/documentation
-    icon: http://www.alloyteam.com/nav/static/images/sass-favicon.png
+
 
   - title: less
     url: https://less.bootcss.com/
-    icon: http://www.alloyteam.com/nav/static/images/less-favicon.png
+
 
   - title: stylus
     url: https://stylus-lang.com/
-    icon: http://www.alloyteam.com/nav/static/images/stylus-favicon.png
+
 
   - title: postcss
     url: https://www.postcss.com.cn/
-    icon: https://www.postcss.com.cn/postcss.7dd7aa64.png
+
 
   - title: tailwindcss
     url: https://www.tailwindcss.cn/

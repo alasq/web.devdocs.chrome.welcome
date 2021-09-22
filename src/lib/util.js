@@ -19,3 +19,9 @@ export function getExtensionVersion() {
   const manifest = chrome.runtime.getManifest()
   return manifest.version
 }
+
+export function getFavico(pageUrl) {
+  const host = new URL(pageUrl).hostname
+
+  return `https://icons.feedercdn.com/${encodeURI(host)}`
+}

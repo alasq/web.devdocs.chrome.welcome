@@ -13,22 +13,13 @@
     <div v-for="(group, index) of sortedData" :key="index">
       <h3>{{ group.title }}</h3>
       <ul>
-        <li
-          v-for="(item, key) of group.list"
-          :key="key"
-          :style="{
-            'background-image':
-              'url(' +
-              (item.icon ||
-                'https://www.google.cn/chrome/static/images/chrome-logo.svg') +
-              ')',
-          }"
-        >
+        <li v-for="(item, key) of group.list" :key="key">
           <a
             :href="item.url"
             :class="{ hight: hight(item.title) }"
             @click.prevent="itemClick(item)"
           >
+            <img :src="getFavico(item.url)" alt="" class="ico" />
             {{ item.title }}</a
           >
         </li>
@@ -39,6 +30,7 @@
 <script>
 import localforage from 'localforage'
 import { toRaw } from '@vue/reactivity'
+import { getFavico } from '../../lib/util'
 
 const data = []
 const files = require.context('../../assets/', false, /\.ya?ml$/)
@@ -52,6 +44,7 @@ export default {
       data,
       count: null,
       searchText: '',
+      getFavico,
     }
   },
   computed: {
@@ -130,9 +123,10 @@ ul {
 }
 ul li {
   list-style-type: none;
-  background: url('https://www.google.cn/chrome/static/images/chrome-logo.svg')
-    no-repeat 0rem 0.3rem;
-  background-size: 1rem 1rem;
-  text-indent: 2em;
+}
+
+img.ico {
+  width: 16px;
+  height: 16px;
 }
 </style>

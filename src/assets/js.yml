@@ -26,7 +26,7 @@ list:
 
   - title: Node.js v16.9.1 文档
     url: http://nodejs.cn/api/
-    icon: http://static.nodejs.cn/_static/img/favicon.png
+
 
   - title: ES6 入门教程
     url: https://es6.ruanyifeng.com/
