@@ -1,0 +1,22 @@
+title: Javascript
+list:
+  - title: MDN Web API
+    url: https://developer.mozilla.org/zh-CN/docs/Web/API
+
+  - title: Regexp
+    url: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions
+
+  - title: lodashjs
+    url: https://www.lodashjs.com/
+
+  - title: vscode
+    url: https://code.visualstudio.com/docs
+
+
+  - title: chrome extensions API
+    url: https://developer.chrome.com/docs/extensions/reference/
+
+  - title: chrome devtools
+    url: https://developer.chrome.com/docs/devtools/overview/
+
+

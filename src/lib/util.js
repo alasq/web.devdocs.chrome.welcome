@@ -1,3 +1,5 @@
+import i18n from './i18n'
+
 export function openOrFocusOptionPage() {
   const optionsUrl = chrome.extension.getURL('option.html')
   chrome.tabs.query({}, (tabs) => {
@@ -24,4 +26,13 @@ export function getFavico(pageUrl) {
   const host = new URL(pageUrl).hostname
 
   return `https://icons.feedercdn.com/${encodeURI(host)}`
+}
+
+export function getLanguages() {
+  return __lANGS__.map((langDir) => {
+    return {
+      lang: langDir,
+      title: i18n[langDir] || langDir,
+    }
+  })
 }

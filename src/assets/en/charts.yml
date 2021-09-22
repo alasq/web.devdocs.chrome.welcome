@@ -1,4 +1,4 @@
-title: 可视化
+title: Data Display
 list:
   - title: echarts
     url: https://echarts.apache.org/zh/index.html
@@ -7,7 +7,7 @@ list:
     url: https://d3js.org/
 
 
-  - title: 蚂蚁金服antv
+  - title: Ant v
     url: https://antv.gitee.io/zh
 
 
@@ -29,6 +29,6 @@ list:
   - title: chartjs
     url: http://chartjs.cn/
 
-  - title: 百度地图
+  - title: Baidu Map
     url: https://lbsyun.baidu.com/
 

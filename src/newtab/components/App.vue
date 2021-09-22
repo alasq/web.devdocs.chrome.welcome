@@ -1,10 +1,17 @@
 <template>
   <div>
     <span
-      >Only For Chinese FrontEnd Developer! If you like this,you can fork this
+      >If you like this,you can fork this
       <a href="https://github.com/alasq/web.devdocs.chrome.welcome">repo</a> and
       edit it.</span
     >
+
+    <select id="lang" v-model="language" name="lang">
+      <option value="cn">中文</option>
+      <option v-for="(lang, index) in langs" :key="index" :value="lang.lang">
+        {{ lang.title }}
+      </option>
+    </select>
   </div>
   <div class="search-box">
     <input v-model="searchText" type="search" placeholder="请输入关键字搜索" />
@@ -30,21 +37,32 @@
 <script>
 import localforage from 'localforage'
 import { toRaw } from '@vue/reactivity'
-import { getFavico } from '../../lib/util'
+import { getFavico, getLanguages } from '../../lib/util'
 
-const data = []
-const files = require.context('../../assets/', false, /\.ya?ml$/)
-files.keys().forEach((key) => {
-  data.push(files(key))
-})
+function getData(lang) {
+  const data = []
+  const files = require.context(`../../assets/`, true, /\.ya?ml$/)
+  files.keys().forEach((key) => {
+    if (lang && lang !== 'cn') {
+      if (key.startsWith(`./${lang}/`)) {
+        data.push(files(key))
+      }
+    } else if (!/\.\/.*?\//.test(key)) {
+      data.push(files(key))
+    }
+  })
+  return data
+}
 
 export default {
   data() {
     return {
-      data,
+      data: getData(),
       count: null,
       searchText: '',
       getFavico,
+      langs: getLanguages(),
+      language: 'cn',
     }
   },
   computed: {
@@ -58,6 +76,11 @@ export default {
       }
 
       return this.data
+    },
+  },
+  watch: {
+    language(newVal) {
+      this.data = getData(newVal)
     },
   },
   async created() {
@@ -90,6 +113,7 @@ li a:visited {
 }
 .flex {
   display: flex;
+  flex-wrap: wrap;
 }
 .flex > div {
   padding: 10px;
@@ -128,5 +152,11 @@ ul li {
 img.ico {
   width: 16px;
   height: 16px;
+}
+#lang {
+  float: right;
+  width: 100px;
+  font: 1.5em sans-serif;
+  outline: 0;
 }
 </style>

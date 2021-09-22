@@ -1,22 +1,22 @@
-const path = require('path')
+const { resolve, join } = require('path')
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
+const { readdirSync, statSync } = require('fs')
 
-new webpack.DefinePlugin({
-  __VUE_PROD_DEVTOOLS__: false,
-})
-
+const pathName = resolve(__dirname, 'src/assets')
+const files = readdirSync(pathName)
+const langs = files.filter((i) => statSync(resolve(pathName, i)).isDirectory())
 const mode = process.env.NODE_ENV || 'development'
 const prod = mode === 'production'
 
 const config = {
   mode: prod ? 'production' : 'development',
   devtool: prod ? 'source-map' : 'eval-cheap-module-source-map',
-  context: path.resolve(__dirname, './src'),
+  context: resolve(__dirname, './src'),
   entry: {
     options: ['./option/option.js'],
     newtab: ['./newtab/newtab.js'],
@@ -29,7 +29,7 @@ const config = {
     },
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: join(__dirname, 'dist'),
     filename: '[name].js',
     chunkFilename: '[name].[id].js',
   },
@@ -53,19 +53,21 @@ const config = {
         test: /\.css$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
           },
           'css-loader',
         ],
       },
       {
         test: /\.ya?ml$/,
-        use:['json-loader','yaml-loader']
-      }
+        use: ['json-loader', 'yaml-loader'],
+      },
     ],
   },
-  mode,
   plugins: [
+    new webpack.DefinePlugin({
+      __lANGS__: JSON.stringify(langs),
+    }),
     new VueLoaderPlugin(),
     new CleanWebpackPlugin({
       cleanStaleWebpackAssets: false,
