@@ -54,15 +54,20 @@ function getData(lang) {
   return data
 }
 
+let lang = 'cn'
+if (/en/.test(navigator.language)) {
+  lang = 'en'
+}
+lang = localStorage.getItem('lang') || lang
 export default {
   data() {
     return {
-      data: getData(),
+      data: getData(lang),
       count: null,
       searchText: '',
       getFavico,
       langs: getLanguages(),
-      language: 'cn',
+      language: lang,
     }
   },
   computed: {
@@ -80,6 +85,7 @@ export default {
   },
   watch: {
     language(newVal) {
+      localStorage.setItem('lang', newVal)
       this.data = getData(newVal)
     },
   },
@@ -106,6 +112,7 @@ export default {
 li a {
   font-size: 16px;
   color: #60a5fa;
+  text-decoration: none;
 }
 li a:visited {
   font-size: 16px;
@@ -158,5 +165,10 @@ img.ico {
   width: 100px;
   font: 1.5em sans-serif;
   outline: 0;
+  border: 0;
+  background: transparent;
+  color: #248667;
+  cursor: pointer;
+  padding: 5px;
 }
 </style>
