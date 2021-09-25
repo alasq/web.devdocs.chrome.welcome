@@ -14,7 +14,7 @@
     </select>
   </div>
   <div class="search-box">
-    <input v-model="searchText" type="search" placeholder="请输入关键字搜索" />
+    <input v-model="searchText" type="search" />
   </div>
   <div class="flex">
     <div v-for="(group, index) of sortedData" :key="index">
