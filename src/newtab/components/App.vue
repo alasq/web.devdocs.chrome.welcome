@@ -119,16 +119,17 @@ export default {
       const count = this.count || {}
       count[item.url] = (count[item.url] || 0) + 1
       localforage.setItem('count', toRaw(count))
-      localforage.setItem('historys', toRaw(this.historys))
       window.location.href = item.url
     },
     pushHistory(item) {
-      if (!this.historys.includes(item)) {
+      if (!this.historys.find((i) => i.url === item.url)) {
         this.historys.push(item)
+        localforage.setItem('historys', toRaw(this.historys))
       }
 
       if (this.historys.length > MAX_HISTORY) {
         this.historys.shift()
+        localforage.setItem('historys', toRaw(this.historys))
       }
     },
     hight(title) {
