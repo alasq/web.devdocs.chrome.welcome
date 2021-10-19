@@ -16,6 +16,23 @@
   <div class="search-box">
     <input v-model="searchText" type="search" />
   </div>
+
+  <!-- 最近访问 -->
+  <section v-if="historys.length > 0">
+    <h3>History</h3>
+    <ul class="flex">
+      <li v-for="(item, key) of historys" :key="key" style="margin-right: 1em">
+        <a
+          :href="item.url"
+          :class="{ hight: hight(item.title) }"
+          @click.prevent="itemClick(item)"
+        >
+          <img :src="getFavico(item.url)" alt="" class="ico" />
+          {{ item.title }}</a
+        >
+      </li>
+    </ul>
+  </section>
   <div class="flex">
     <div v-for="(group, index) of sortedData" :key="index">
       <h3>{{ group.title }}</h3>
@@ -38,6 +55,8 @@
 import localforage from 'localforage'
 import { toRaw } from '@vue/reactivity'
 import { getFavico, getLanguages } from '../../lib/util'
+
+const MAX_HISTORY = 8
 
 function getData(lang) {
   const data = []
@@ -68,6 +87,7 @@ export default {
       getFavico,
       langs: getLanguages(),
       language: lang,
+      historys: [],
     }
   },
   computed: {
@@ -91,13 +111,25 @@ export default {
   },
   async created() {
     this.count = await localforage.getItem('count')
+    this.historys = (await localforage.getItem('historys')) || []
   },
   methods: {
     async itemClick(item) {
+      this.pushHistory(item)
       const count = this.count || {}
       count[item.url] = (count[item.url] || 0) + 1
-      await localforage.setItem('count', toRaw(count))
+      localforage.setItem('count', toRaw(count))
+      localforage.setItem('historys', toRaw(this.historys))
       window.location.href = item.url
+    },
+    pushHistory(item) {
+      if (!this.historys.includes(item)) {
+        this.historys.push(item)
+      }
+
+      if (this.historys.length > MAX_HISTORY) {
+        this.historys.shift()
+      }
     },
     hight(title) {
       if (!this.searchText) {
@@ -140,6 +172,9 @@ li a:visited {
   padding: 0 20px;
   border: 2px solid #39efb4;
   outline: 0;
+}
+section {
+  padding: 10px;
 }
 .search-box input:focus {
   box-shadow: #39efb5b0 2px 2px 10px;
