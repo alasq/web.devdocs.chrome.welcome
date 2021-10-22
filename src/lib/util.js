@@ -17,6 +17,14 @@ export function openOrFocusOptionPage() {
   })
 }
 
+export function getCurrentTab(cb) {
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    if (tabs[0]) {
+      cb(tabs[0])
+    }
+  })
+}
+
 export function getExtensionVersion() {
   const manifest = chrome.runtime.getManifest()
   return manifest.version

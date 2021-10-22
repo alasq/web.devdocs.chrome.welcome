@@ -21,6 +21,7 @@ const config = {
     options: ['./option/option.js'],
     newtab: ['./newtab/newtab.js'],
     background: ['./background/background.js'],
+    popup: ['./popup/popup.js'],
     content: ['./content/content.js'],
   },
   resolve: {
@@ -77,6 +78,12 @@ const config = {
       template: './index.html',
       filename: 'option.html',
       chunks: ['options'],
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Add to welcome page for the tab',
+      template: './index.html',
+      filename: 'popup.html',
+      chunks: ['popup'],
     }),
     new HtmlWebpackPlugin({
       title: 'New Tab',

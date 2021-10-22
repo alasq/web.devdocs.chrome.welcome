@@ -49,6 +49,22 @@
         </li>
       </ul>
     </div>
+
+    <div v-for="(group, index) of favorite" :key="index">
+      <h3>{{ group.title }}</h3>
+      <ul>
+        <li v-for="(item, key) of group.list" :key="key">
+          <a
+            :href="item.url"
+            :class="{ hight: hight(item.title) }"
+            @click.prevent="itemClick(item)"
+          >
+            <img :src="getFavico(item.url)" alt="" class="ico" />
+            {{ item.title }}</a
+          >
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 <script>
@@ -88,6 +104,7 @@ export default {
       langs: getLanguages(),
       language: lang,
       historys: [],
+      favorite: [],
     }
   },
   computed: {
@@ -112,6 +129,7 @@ export default {
   async created() {
     this.count = await localforage.getItem('count')
     this.historys = (await localforage.getItem('historys')) || []
+    this.favorite = (await localforage.getItem('favorite')) || []
   },
   methods: {
     async itemClick(item) {

@@ -16,5 +16,8 @@
     "sourceType": "module",
     "ecmaVersion": 2020,
     "parser": "babel-eslint"
+  },
+  "rules": {
+    "no-alert":"off"
   }
 }
