@@ -33,7 +33,7 @@
       </li>
     </ul>
   </section>
-  <div class="flex">
+  <div id="sortBox" class="flex">
     <div v-for="(group, index) of sortedData" :key="index">
       <h3>{{ group.title }}</h3>
       <ul>
@@ -70,6 +70,7 @@
 <script>
 import localforage from 'localforage'
 import { toRaw } from '@vue/reactivity'
+import Sortable from 'sortablejs'
 import { getFavico, getLanguages } from '../../lib/util'
 
 const MAX_HISTORY = 8
@@ -130,6 +131,33 @@ export default {
     this.count = await localforage.getItem('count')
     this.historys = (await localforage.getItem('historys')) || []
     this.favorite = (await localforage.getItem('favorite')) || []
+  },
+  mounted() {
+    const el = document.getElementById('sortBox')
+    Sortable.create(el, {
+      handle: 'h3',
+      group: 'localStorage-example',
+      store: {
+        /**
+         * Get the order of elements. Called once during initialization.
+         * @param   {Sortable}  sortable
+         * @returns {Array}
+         */
+        get(sortable) {
+          const order = localStorage.getItem(sortable.options.group.name)
+          return order ? order.split('|') : []
+        },
+
+        /**
+         * Save the order of elements. Called onEnd (when the item is dropped).
+         * @param {Sortable}  sortable
+         */
+        set(sortable) {
+          const order = sortable.toArray()
+          localStorage.setItem(sortable.options.group.name, order.join('|'))
+        },
+      },
+    })
   },
   methods: {
     async itemClick(item) {
@@ -202,6 +230,7 @@ h3 {
   opacity: 0.6;
   font-size: 18px;
   color: #248667;
+  cursor: move;
 }
 ul {
   padding-left: 0;

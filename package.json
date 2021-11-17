@@ -22,6 +22,7 @@
     "json-loader": "^0.5.7",
     "json2yaml": "^1.1.0",
     "localforage": "^1.10.0",
+    "sortablejs": "^1.14.0",
     "vue": "^3.1.1"
   },
   "devDependencies": {
