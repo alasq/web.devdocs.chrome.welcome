@@ -13,8 +13,14 @@ list:
   - title: daisyui
     url: https://daisyui.com/
 
-  - title: arco design
+  - title: 字节 arco design
     url: https://arco.design/
+
+  - title: 微前端-阿里-乾坤
+    url: https://qiankun.umijs.org/zh/
+
+  - title: 微前端-京东-micro-app
+    url: https://cangdu.org/micro-app/
 
 
 

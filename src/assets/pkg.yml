@@ -44,5 +44,11 @@ list:
   - title: typescript
     url: https://www.tslang.cn/docs/home.html
 
+  - title: lerna
+    url: https://lerna.js.org/
+
+  - title: vitejs
+    url: https://www.vitejs.net/
+
 
 
